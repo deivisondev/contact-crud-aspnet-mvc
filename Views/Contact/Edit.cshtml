@@ -1,14 +1,14 @@
 @model ContactCrudAspNetMvc.Models.Contact
 
 @{
-    ViewData["Title"] = "Cadastrar novo contato";
+    ViewData["Title"] = "Editar contato";
 }
 
-<h1>Cadastrar contato</h1>
+<h1>Editar contato</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div class="form-group">
                 <label asp-for="Name" class="control-label">Nome</label>
                 <input asp-for="Name" class="form-control">
@@ -23,7 +23,7 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="submit" value="Criar" class="btn btn-primary">
+                <input type="submit" value="Salvar" class="btn btn-primary">
             </div>
         </form>
     </div>

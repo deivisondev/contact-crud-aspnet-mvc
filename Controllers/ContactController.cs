@@ -41,5 +41,33 @@ namespace ContactCrudAspNetMvc.Controllers
 
             return View(contact);
         }
+
+        public IActionResult Edit(int id)
+        {
+            Contact contact = _context.Contacts.Find(id);
+
+            if (contact == null)
+                return NotFound();
+
+            return View(contact);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Contact contact)
+        {
+            Contact contactData = _context.Contacts.Find(contact.Id);
+
+            if (contactData == null)
+                return NotFound();
+
+            contactData.Name = contact.Name;
+            contactData.Cellphone = contact.Cellphone;
+            contactData.Email = contact.Email;
+
+            _context.Contacts.Update(contactData);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
