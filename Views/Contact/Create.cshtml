@@ -1,0 +1,30 @@
+@model ContactCrudAspNetMvc.Models.Contact
+
+@{
+    ViewData["Title"] = "Cadastrar novo contato";
+}
+
+<h1>Cadastrar contato</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Nome</label>
+                <input asp-for="Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Cellphone" class="control-label">Telefone</label>
+                <input asp-for="Cellphone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>

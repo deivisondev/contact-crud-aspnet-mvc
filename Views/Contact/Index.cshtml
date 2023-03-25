@@ -1,0 +1,49 @@
+@model IEnumerable<ContactCrudAspNetMvc.Models.Contact>
+
+@{
+    ViewData["Title"] = "Lista de contatos";
+}
+
+<h1>Contatos</h1>
+
+<p>
+    <a asp-action="Create">Novo contato</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cellphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Cellphone)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Email)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
