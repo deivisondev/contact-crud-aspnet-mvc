@@ -1,0 +1,43 @@
+@model ContactCrudAspNetMvc.Models.Contact
+
+@{
+    ViewData["Title"] = "Detalhes do contato";
+}
+
+<h1>Detalhes do contato</h1>
+
+<hr>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            <span>Nome</span>
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Name)
+        </dt>
+        <dt class="col-sm-2">
+            <span>Telefone</span>
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Cellphone)
+        </dt>
+        <dt class="col-sm-2">
+            <span>Email</span>
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Email)
+        </dt>
+        <dt class="col-sm-2">
+            <span>Data de criação</span>
+        </dt>
+        <dt class="col-sm-10">
+            @Model.CreationDate.ToString("dd/MM/yyyy")
+        </dt>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index">Voltar</a>
+</div>

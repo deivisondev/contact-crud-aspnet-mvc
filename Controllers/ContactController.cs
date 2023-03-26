@@ -69,5 +69,15 @@ namespace ContactCrudAspNetMvc.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(int id)
+        {
+            Contact contact = _context.Contacts.Find(id);
+
+            if (contact == null)
+                return NotFound();
+            
+            return View(contact);
+        }
     }
 }
